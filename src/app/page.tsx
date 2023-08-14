@@ -1,3 +1,9 @@
+import { Header } from '@/components/Header'
+
 export default function Home() {
-  return <h1 className="font-raleway">Ola mundo</h1>
+  return (
+    <div className="font-raleway">
+      <Header />
+    </div>
+  )
 }
