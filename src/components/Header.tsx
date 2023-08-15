@@ -1,12 +1,13 @@
 import { HandbagSimple } from '../libs/phosphor-react'
 import { Avatar } from './Avatar'
 import { DropdownMenu } from './DropdownMenu'
+import { NavItem } from './NavItem'
 import { SearchInput } from './SearchInput'
 
 export function Header() {
   return (
     <header className="flex flex-col">
-      <div className="flex justify-between bg-neutral-100 px-8 py-4">
+      <div className="flex justify-between bg-neutral-300 px-8 py-4">
         <SearchInput />
         <div className="relative flex items-center gap-3">
           <Avatar
@@ -20,8 +21,16 @@ export function Header() {
           </div>
         </div>
       </div>
-      <div className="bg-neutral-600 px-8 py-8 text-xl font-semibold text-neutral-300">
-        FASHION STORE
+      <div className="flex justify-between bg-neutral-600 px-8 py-8">
+        <h2 className=" text-xl font-semibold text-neutral-300">
+          FASHION STORE
+        </h2>
+        <nav className="flex gap-8">
+          <NavItem title="Home" />
+          <NavItem title="Shop" />
+          <NavItem title="Sale" />
+          <NavItem title="Customer Care" />
+        </nav>
       </div>
     </header>
   )
