@@ -1,5 +1,6 @@
 import { HandbagSimple } from '../libs/phosphor-react'
 import { Avatar } from './Avatar'
+import { DropdownMenu } from './DropdownMenu'
 import { SearchInput } from './SearchInput'
 
 export function Header() {
@@ -12,7 +13,8 @@ export function Header() {
             size="sm"
             src="https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&w=128&h=128&dpr=2&q=80"
           />
-          <HandbagSimple size={26} className="text-neutral-800" />
+          <DropdownMenu />
+          <HandbagSimple size={26} className="ml-3 text-neutral-800" />
           <div className="absolute right-[9px] top-[6px] text-xs font-bold text-neutral-800">
             9
           </div>
