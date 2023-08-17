@@ -7,7 +7,7 @@ import { SearchInput } from './SearchInput'
 export function Header() {
   return (
     <header className="flex flex-col">
-      <div className="flex justify-between bg-neutral-300 px-8 py-4">
+      <div className="flex max-w-7xl justify-between bg-neutral-300 px-8 py-4">
         <SearchInput />
         <div className="relative flex items-center gap-3">
           <Avatar
@@ -21,7 +21,7 @@ export function Header() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between bg-neutral-600 px-8 py-8">
+      <div className="flex max-w-7xl justify-between bg-neutral-600 px-8 py-8">
         <h2 className=" text-xl font-semibold text-neutral-300">
           FASHION STORE
         </h2>
