@@ -5,6 +5,7 @@ import homeImage from '../../public/home_img.webp'
 import dressImage from '../../public/dress_image.webp'
 import bagImage from '../../public/bag_image.webp'
 import glassesImage from '../../public/glasses_image.webp'
+import { Footer } from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -90,6 +91,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }
