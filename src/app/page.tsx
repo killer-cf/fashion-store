@@ -1,7 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import homeImage from '../../public/home_img.webp'
-import Link from 'next/link'
+import dressImage from '../../public/dress_image.webp'
+import bagImage from '../../public/bag_image.webp'
+import glassesImage from '../../public/glasses_image.webp'
 
 export default function Home() {
   return (
@@ -43,11 +46,48 @@ export default function Home() {
           </p>
         </div>
         <div className="m-auto grid max-w-screen-lg grid-flow-row grid-cols-1 justify-items-center gap-2  pb-10 md:grid-cols-3">
-          <div className="h-72 min-w-[100px] max-w-xs bg-slate-300">
-            vestido
+          <div className="group flex h-[368px] max-w-xs flex-col">
+            <div className="h-[318px] overflow-hidden">
+              <Image
+                src={dressImage}
+                alt=""
+                quality={100}
+                className="h-full duration-300 ease-out group-hover:scale-110"
+              />
+            </div>
+            <button className="w-full flex-1 cursor-pointer bg-neutral-800 text-neutral-200">
+              <p className="font-raleway text-sm group-hover:hidden">
+                MIDI PLEATED SKIRT
+              </p>
+              <p className="hidden font-raleway text-sm group-hover:block">
+                View Details
+              </p>
+            </button>
           </div>
-          <div className="h-72 min-w-[100px] max-w-xs bg-slate-300">bolsa</div>
-          <div className="h-72 min-w-[100px] max-w-xs bg-slate-300">oculos</div>
+          <div className="relative h-[318px]">
+            <Image src={bagImage} alt="" />
+            <button className="absolute top-16 w-full text-center font-tinos text-5xl tracking-[.25em] text-neutral-900 hover:opacity-50">
+              SALE
+            </button>
+          </div>
+          <div className="group flex h-[368px] max-w-xs flex-col">
+            <div className="h-[318px] overflow-hidden">
+              <Image
+                src={glassesImage}
+                alt=""
+                quality={100}
+                className="h-full duration-300 ease-out group-hover:scale-110"
+              />
+            </div>
+            <button className="w-full flex-1 cursor-pointer bg-neutral-800 text-neutral-200">
+              <p className="font-raleway text-sm group-hover:hidden">
+                VINTAGE FRAME EYEGLASSES
+              </p>
+              <p className="hidden font-raleway text-sm group-hover:block">
+                View Details
+              </p>
+            </button>
+          </div>
         </div>
       </section>
     </div>
