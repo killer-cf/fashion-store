@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="w-full bg-neutral-800 py-6 font-raleway text-neutral-400">
       <div className="max-w-7xl space-y-10">
-        <div className="flex flex-wrap">
+        <div className="flex flex-col gap-10 sm:flex-row sm:gap-0">
           <div className="flex flex-1 flex-col items-center gap-5">
             <h3 className="text-xs">STAY CONNECTED</h3>
             <div className="flex gap-2">
@@ -30,7 +30,7 @@ export function Footer() {
           </div>
           <div className="flex flex-1 flex-col items-center gap-5">
             <h3 className="text-xs">BE OUR FRIEND</h3>
-            <form className="flex w-[85%] flex-col space-y-4">
+            <form className="flex w-[85%] max-w-xs flex-col space-y-4">
               <input
                 type="text"
                 className="bg-transparent px-3 placeholder:text-xs"
