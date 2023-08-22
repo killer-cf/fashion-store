@@ -8,6 +8,7 @@ import { twMerge } from 'tailwind-merge'
 export function Filters() {
   const [minMaxPrice, setMinMaxPrice] = useState([25, 200])
   const [priceFilterIsOpen, setPriceFilterIsOpen] = useState(true)
+  const [colorFilterIsOpen, setColorFilterIsOpen] = useState(false)
 
   return (
     <div className="flex w-[200px] flex-col">
@@ -52,6 +53,38 @@ export function Filters() {
           <div className="flex justify-between text-xs text-neutral-500">
             <span>R$ {minMaxPrice[0]},00</span>
             <span>R$ {minMaxPrice[1]},00</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5 h-px w-full bg-neutral-300" />
+
+      <div>
+        <button
+          onClick={() => setColorFilterIsOpen(!colorFilterIsOpen)}
+          className="mt-4 flex w-full items-center justify-between"
+        >
+          <span className="text-sm">Color</span>
+          <div className="text-neutral-900">
+            {colorFilterIsOpen ? <Minus size={13} /> : <Plus size={13} />}
+          </div>
+        </button>
+        <div
+          className={twMerge(
+            'transition-max-height max-h-0 overflow-hidden duration-500',
+            colorFilterIsOpen && 'max-h-32',
+          )}
+        >
+          <div className="mt-3 flex flex-wrap gap-2">
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-red-600" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-green-600" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-violet-500" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-yellow-400" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-white" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-black" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-orange-500" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-blue-500" />
+            <div className="h-4 w-4 rounded-full border border-neutral-400 bg-pink-500" />
           </div>
         </div>
       </div>
