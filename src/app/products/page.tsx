@@ -1,4 +1,5 @@
 import { DropdownSelect } from '@/components/DropdownSelect'
+import { Filters } from '@/components/Filters'
 
 export default function Products() {
   return (
@@ -10,7 +11,7 @@ export default function Products() {
       </div>
       <section className="flex justify-center">
         <div className="mr-5 hidden min-w-[150px] max-w-xs md:block">
-          <span>Filter by</span>
+          <Filters />
         </div>
         <div className="flex-1">
           <div className="flex justify-end gap-3">
