@@ -1,3 +1,5 @@
+import { DropdownSelect } from '@/components/DropdownSelect'
+
 export default function Products() {
   return (
     <div className="max-w-7xl px-8">
@@ -13,7 +15,9 @@ export default function Products() {
         <div className="flex-1">
           <div className="flex justify-end gap-3">
             <div className="md:hidden">filters</div>
-            <div className="">sort by</div>
+            <div className="mb-4">
+              <DropdownSelect />
+            </div>
           </div>
           <div className="grid flex-1 justify-center gap-4 bg-slate-300 sm:grid-cols-3 lg:grid-cols-4">
             <div className="h-44 bg-red-300">produto 1</div>
