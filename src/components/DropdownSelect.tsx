@@ -21,7 +21,7 @@ export function DropdownSelect() {
   return (
     <DropdownMenuRadix.Root onOpenChange={setIsOpen} open={isOpen}>
       <DropdownMenuRadix.Trigger asChild className="cursor-pointer">
-        <div className="flex border border-neutral-700 px-2 py-1 text-neutral-600 sm:w-40 sm:justify-between">
+        <div className="flex h-8 items-center border border-neutral-700 px-2 py-1 text-neutral-600 sm:w-40 sm:justify-between">
           <span className="hidden text-sm sm:inline">{selectedOption}</span>
           <ArrowsDownUp weight="bold" className="block sm:hidden" />
           {isOpen ? (

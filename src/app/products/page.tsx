@@ -1,3 +1,4 @@
+import { DialogFilter } from '@/components/DialogFilter'
 import { DropdownSelect } from '@/components/DropdownSelect'
 import { Filters } from '@/components/Filters'
 
@@ -15,7 +16,13 @@ export default function Products() {
         </div>
         <div className="flex-1">
           <div className="flex justify-end gap-3">
-            <div className="md:hidden">filters</div>
+            <div className="flex-1 sm:flex-grow-0 md:hidden">
+              <DialogFilter>
+                <button className="h-8 w-full border border-neutral-700 px-4 text-sm text-neutral-600 sm:w-20">
+                  Filters
+                </button>
+              </DialogFilter>
+            </div>
             <div className="mb-4">
               <DropdownSelect />
             </div>
