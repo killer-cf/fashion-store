@@ -1,14 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { Minus, Plus } from '../libs/phosphor-react'
+import { Check, Minus, Plus } from '../libs/phosphor-react'
 import * as Slider from '@radix-ui/react-slider'
+import * as Checkbox from '@radix-ui/react-checkbox'
 import { twMerge } from 'tailwind-merge'
 
 export function Filters() {
   const [minMaxPrice, setMinMaxPrice] = useState([25, 200])
   const [priceFilterIsOpen, setPriceFilterIsOpen] = useState(true)
   const [colorFilterIsOpen, setColorFilterIsOpen] = useState(false)
+  const [sizeFilterIsOpen, setSizeFilterIsOpen] = useState(false)
 
   return (
     <div className="flex w-[200px] flex-col">
@@ -85,6 +87,67 @@ export function Filters() {
             <div className="h-4 w-4 rounded-full border border-neutral-400 bg-orange-500" />
             <div className="h-4 w-4 rounded-full border border-neutral-400 bg-blue-500" />
             <div className="h-4 w-4 rounded-full border border-neutral-400 bg-pink-500" />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5 h-px w-full bg-neutral-300" />
+
+      <div>
+        <button
+          onClick={() => setSizeFilterIsOpen(!sizeFilterIsOpen)}
+          className="mt-4 flex w-full items-center justify-between"
+        >
+          <span className="text-sm">Size</span>
+          <div className="text-neutral-900">
+            {sizeFilterIsOpen ? <Minus size={13} /> : <Plus size={13} />}
+          </div>
+        </button>
+        <div
+          className={twMerge(
+            'transition-max-height max-h-0 overflow-hidden duration-500',
+            sizeFilterIsOpen && 'max-h-32',
+          )}
+        >
+          <div className="mt-3 flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <Checkbox.Root
+                className="flex h-4 w-4 appearance-none items-center justify-center rounded-[2px] border border-neutral-900 bg-white shadow-black outline-none"
+                defaultChecked
+                id="small"
+              >
+                <Checkbox.Indicator className="text-neutral-700">
+                  <Check size={14} />
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+              <span className="text-xs text-neutral-800">Small</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Checkbox.Root
+                className="flex h-4 w-4 appearance-none items-center justify-center rounded-[2px] border border-neutral-900 bg-white shadow-black outline-none"
+                defaultChecked
+                id="medium"
+              >
+                <Checkbox.Indicator className="text-neutral-700">
+                  <Check size={14} />
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+              <span className="text-xs text-neutral-800">Medium</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Checkbox.Root
+                className="flex h-4 w-4 appearance-none items-center justify-center rounded-[2px] border border-neutral-900 bg-white shadow-black outline-none"
+                defaultChecked
+                id="large"
+              >
+                <Checkbox.Indicator className="text-neutral-700">
+                  <Check size={14} />
+                </Checkbox.Indicator>
+              </Checkbox.Root>
+              <span className="text-xs text-neutral-800">Large</span>
+            </div>
           </div>
         </div>
       </div>
